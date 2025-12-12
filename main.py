@@ -72,15 +72,23 @@ while True:
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_RIGHT:
                 move_right = True
-        
-    if event.type == pygame:
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_RIGHT:
-                move_right = False
+        if event.key == pygame.K_LEFT:
+            move_left = True
+    if event.type == pygame.KEYUP:
+        if event.key == pygame.K_RIGHT:
+            move_right = False
+        if event.key == pygame.K_LEFT:
+                move_left = False
+
+
 
         
     if move_right:
         platform.rect.x += 5
+        print(1)
+    if move_left:
+        platform.rect.x -= 5
+        print(2)
     ball.rect.x += dx
     ball.rect.y += dy
     if ball.colliderect(platform):
